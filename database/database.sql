@@ -21,9 +21,7 @@ DROP TABLE IF EXISTS juegos;
 DROP TABLE IF EXISTS categorias;
 DROP TABLE IF EXISTS usuarios;
 
--- ---------------------------------------------------------------------
--- INTEGRANTE 1 (usuarios) + INTEGRANTE 2 (categorias): tablas base
--- ---------------------------------------------------------------------
+-- Tablas Base
 
 CREATE TABLE usuarios (
   id      INT AUTO_INCREMENT PRIMARY KEY,
@@ -38,9 +36,7 @@ CREATE TABLE categorias (
   descripcion VARCHAR(255)
 );
 
--- ---------------------------------------------------------------------
--- INTEGRANTE 2 (juegos): depende de categorias
--- ---------------------------------------------------------------------
+-- Juegos con sus categorias (relacion 1:N con categorias)
 
 CREATE TABLE juegos (
   id           INT AUTO_INCREMENT PRIMARY KEY,
@@ -50,9 +46,7 @@ CREATE TABLE juegos (
   FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE SET NULL
 );
 
--- ---------------------------------------------------------------------
--- INTEGRANTE 3 (palabras): utilizadas por el juego Ahorcado
--- ---------------------------------------------------------------------
+-- Palabras para el juego del Ahorcado (no tiene relacion con otras tablas, se usa solo en el juego)
 
 CREATE TABLE palabras (
   id         INT AUTO_INCREMENT PRIMARY KEY,
@@ -61,10 +55,7 @@ CREATE TABLE palabras (
   categoria  VARCHAR(50)
 );
 
--- ---------------------------------------------------------------------
--- INTEGRANTE 1 (puntajes): depende de usuarios y de juegos
--- ---------------------------------------------------------------------
-
+-- Puntajes de los juegos (relacion 1:N con usuarios y con juegos)
 CREATE TABLE puntajes (
   id         INT AUTO_INCREMENT PRIMARY KEY,
   usuario_id INT NOT NULL,
@@ -75,9 +66,8 @@ CREATE TABLE puntajes (
   FOREIGN KEY (juego_id)   REFERENCES juegos(id)   ON DELETE CASCADE
 );
 
--- ---------------------------------------------------------------------
--- INTEGRANTE 3 (resenas): depende de usuarios y de juegos
--- ---------------------------------------------------------------------
+
+-- Reseñas de los juegos (relacion 1:N con usuarios y con juegos)
 
 CREATE TABLE resenas (
   id           INT AUTO_INCREMENT PRIMARY KEY,
@@ -90,9 +80,7 @@ CREATE TABLE resenas (
   FOREIGN KEY (juego_id)   REFERENCES juegos(id)   ON DELETE CASCADE
 );
 
--- ---------------------------------------------------------------------
--- INTEGRANTE 3 (respuestas): depende de resenas y de usuarios
--- ---------------------------------------------------------------------
+-- Respuestas a las reseñas (relacion 1:N con resenas y con usuarios)
 
 CREATE TABLE respuestas (
   id         INT AUTO_INCREMENT PRIMARY KEY,
@@ -119,11 +107,11 @@ INSERT INTO categorias (nombre, descripcion) VALUES
   ('Arcade',     'Rapidez y reflejos'),
   ('Estrategia', 'Piensa antes de mover');
 
--- juego id 1 = Snake, id 2 = Tres en Raya (los usa el frontend de los juegos)
+-- juego id 1 = Snake, id 2 = Tres en Raya, id 3 = Ahorcado, id 4 = Bong (los usa el frontend de los juegos)
 INSERT INTO juegos (nombre, descripcion, categoria_id) VALUES
   ('Snake',        'Come manzanas y crece sin chocar', 2),
   ('Tres en Raya', 'Consigue tres en linea antes que tu rival', 3),
-  ('Ahorcado', 'Adivina la palabra antes de completar el dibujo', 1);
+  ('Ahorcado', 'Adivina la palabra antes de completar el dibujo', 1),
   ('Bong', 'Salta obstaculos y recoge monedas', 2);
 
 INSERT INTO palabras (palabra, pista, categoria) VALUES
