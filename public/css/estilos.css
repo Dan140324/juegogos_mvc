@@ -1,0 +1,182 @@
+/* Estilos generales de Juegogos. Mantiene el mismo look del primer parcial. */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(230, 229, 229);
+    color: #222;
+}
+
+header {
+    background-color: rgb(46, 46, 94);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: rgb(46, 46, 94);
+}
+
+/* Tarjetas de la pagina de inicio */
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 250px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.boton,
+button {
+    display: inline-block;
+    background-color: rgb(46, 46, 94);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.boton:hover,
+button:hover {
+    background-color: rgb(66, 66, 130);
+}
+
+/* Tablas de los CRUD */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    margin-top: 12px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+th {
+    background: rgb(46, 46, 94);
+    color: white;
+}
+
+td a {
+    color: rgb(46, 46, 94);
+    margin-right: 8px;
+}
+
+/* Formularios */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 420px;
+    margin-top: 12px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+.mensaje {
+    color: #b00020;
+    font-weight: bold;
+}
+
+.mensaje-ok {
+    color: #0a7d28;
+    font-weight: bold;
+}
+
+/* Juegos */
+.marcador {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+canvas {
+    background: #222;
+    display: block;
+    margin: 0 auto;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 2px solid rgb(46, 46, 94);
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#status {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 16px;
+    color: #555;
+}
