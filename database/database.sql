@@ -124,6 +124,7 @@ INSERT INTO juegos (nombre, descripcion, categoria_id) VALUES
   ('Snake',        'Come manzanas y crece sin chocar', 2),
   ('Tres en Raya', 'Consigue tres en linea antes que tu rival', 3),
   ('Ahorcado', 'Adivina la palabra antes de completar el dibujo', 1);
+  ('Bong', 'Salta obstaculos y recoge monedas', 2);
 
 INSERT INTO palabras (palabra, pista, categoria) VALUES
   ('ELEFANTE','Animal terrestre más grande','Animales'),

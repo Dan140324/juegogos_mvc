@@ -11,7 +11,7 @@ class Conexion
         $bd   = getenv("DB_NAME") ?: "juegogos";
         $user = getenv("DB_USER") ?: "root";
         $pass = getenv("DB_PASS") ?: "";
-        $port = getenv("DB_PORT") ?: 3306;
+        $port = getenv("DB_PORT") ?: 3307;
 
         $conn = new mysqli($host, $user, $pass, $bd, (int)$port);
 

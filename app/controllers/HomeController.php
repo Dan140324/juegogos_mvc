@@ -21,4 +21,9 @@ class HomeController
     {
         require __DIR__ . "/../views/home/ahorcado.php";
     }
+
+    public function bong()
+    {
+        require __DIR__ . "/../views/home/bong.php";
+    }
 }

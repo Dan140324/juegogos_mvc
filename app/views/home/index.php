@@ -1,4 +1,5 @@
-<?php $titulo = "Juegogos - Inicio"; require __DIR__ . "/../partials/header.php"; ?>
+<?php $titulo = "Juegogos - Inicio";
+require __DIR__ . "/../partials/header.php"; ?>
 
 <section>
     <h2>Bienvenido a Juegogos</h2>
@@ -41,11 +42,18 @@
             </a>
         </div>
 
-        <!-- NUEVO JUEGO -->
         <div class="tarjeta">
             <h3>Ahorcado</h3>
             <p>Adivina la palabra antes de quedarte sin intentos.</p>
             <a href="index.php?url=home/ahorcado" class="boton">
+                Jugar
+            </a>
+        </div>
+
+        <div class="tarjeta">
+            <h3>Bong</h3>
+            <p>Presiona Espacio para saltar. Recoge monedas y esquiva obstaculos.</p>
+            <a href="index.php?url=home/bong" class="boton">
                 Jugar
             </a>
         </div>

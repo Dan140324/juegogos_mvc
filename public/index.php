@@ -29,6 +29,9 @@ switch ($url) {
     case "home/snake":       (new HomeController())->snake();       break;
     case "home/tresenraya":  (new HomeController())->tresEnRaya();  break;
     case "home/ahorcado":    (new HomeController())->ahorcado();    break;
+    case "home/bong":
+        (new HomeController())->bong();
+        break;
 
     // ----- Autenticacion -----
     case "auth/login":       (new AuthController())->loginForm();    break;
