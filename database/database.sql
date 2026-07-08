@@ -1,12 +1,3 @@
--- =====================================================================
---  Base de datos: Juegogos  (Proyecto DAW 6-7)
---  6 entidades en 3 parejas relacionadas (una pareja por integrante):
---    Integrante 1: usuarios (1) --- (N) puntajes
---    Integrante 2: categorias (1) --- (N) juegos
---    Integrante 3: resenas (1) --- (N) respuestas
---  Motor: MySQL 8 (compatible con MySQL 5.7)
--- =====================================================================
-
 CREATE DATABASE IF NOT EXISTS juegogos
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
