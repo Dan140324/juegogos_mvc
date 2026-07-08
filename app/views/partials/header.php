@@ -21,6 +21,7 @@ $hayLogin = isset($_SESSION["id_usuario"]);
                 <a href="index.php?url=categorias/listar">Categorias</a>
                 <a href="index.php?url=juegos/listar">Juegos</a>
                 <a href="index.php?url=resenas/listar">Reseñas</a>
+                <a href="index.php?url=palabras/listar">Palabras</a>
                 <a href="index.php?url=usuarios/listar">Usuarios</a>
                 <a href="index.php?url=auth/logout">Salir (<?= htmlspecialchars($_SESSION["usuario"]) ?>)</a>
             <?php else: ?>

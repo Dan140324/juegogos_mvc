@@ -16,4 +16,9 @@ class HomeController
     {
         require __DIR__ . "/../views/home/tresenraya.php";
     }
+
+    public function ahorcado()
+    {
+        require __DIR__ . "/../views/home/ahorcado.php";
+    }
 }

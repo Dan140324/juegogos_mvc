@@ -51,6 +51,17 @@ CREATE TABLE juegos (
 );
 
 -- ---------------------------------------------------------------------
+-- INTEGRANTE 3 (palabras): utilizadas por el juego Ahorcado
+-- ---------------------------------------------------------------------
+
+CREATE TABLE palabras (
+  id         INT AUTO_INCREMENT PRIMARY KEY,
+  palabra    VARCHAR(80) NOT NULL,
+  pista      VARCHAR(255),
+  categoria  VARCHAR(50)
+);
+
+-- ---------------------------------------------------------------------
 -- INTEGRANTE 1 (puntajes): depende de usuarios y de juegos
 -- ---------------------------------------------------------------------
 
@@ -111,7 +122,15 @@ INSERT INTO categorias (nombre, descripcion) VALUES
 -- juego id 1 = Snake, id 2 = Tres en Raya (los usa el frontend de los juegos)
 INSERT INTO juegos (nombre, descripcion, categoria_id) VALUES
   ('Snake',        'Come manzanas y crece sin chocar', 2),
-  ('Tres en Raya', 'Consigue tres en linea antes que tu rival', 3);
+  ('Tres en Raya', 'Consigue tres en linea antes que tu rival', 3),
+  ('Ahorcado', 'Adivina la palabra antes de completar el dibujo', 1);
+
+INSERT INTO palabras (palabra, pista, categoria) VALUES
+  ('ELEFANTE','Animal terrestre más grande','Animales'),
+  ('LEON','Rey de la selva','Animales'),
+  ('PHP','Lenguaje utilizado en este proyecto','Programación'),
+  ('MYSQL','Sistema gestor de base de datos','Tecnología'),
+  ('GUAYAQUIL','Ciudad principal del litoral ecuatoriano','Ciudades');
 
 INSERT INTO puntajes (usuario_id, juego_id, puntaje) VALUES
   (1, 1, 120),

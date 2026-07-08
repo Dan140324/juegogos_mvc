@@ -7,6 +7,8 @@
 
 session_start();
 
+
+
 require_once __DIR__ . "/../app/controllers/HomeController.php";
 require_once __DIR__ . "/../app/controllers/AuthController.php";
 require_once __DIR__ . "/../app/controllers/UsuarioController.php";
@@ -15,8 +17,10 @@ require_once __DIR__ . "/../app/controllers/JuegoController.php";
 require_once __DIR__ . "/../app/controllers/PuntajeController.php";
 require_once __DIR__ . "/../app/controllers/ResenaController.php";
 require_once __DIR__ . "/../app/controllers/RespuestaController.php";
+require_once __DIR__ . "/../app/controllers/PalabraController.php";
 
 $url = $_GET["url"] ?? "home/index";
+
 
 switch ($url) {
 
@@ -24,6 +28,7 @@ switch ($url) {
     case "home/index":       (new HomeController())->index();       break;
     case "home/snake":       (new HomeController())->snake();       break;
     case "home/tresenraya":  (new HomeController())->tresEnRaya();  break;
+    case "home/ahorcado":    (new HomeController())->ahorcado();    break;
 
     // ----- Autenticacion -----
     case "auth/login":       (new AuthController())->loginForm();    break;
@@ -72,6 +77,16 @@ switch ($url) {
     // ----- Integrante 3: respuestas -----
     case "respuestas/crear":    (new RespuestaController())->crear();    break;
     case "respuestas/eliminar": (new RespuestaController())->eliminar(); break;
+
+
+    // ----- Palabras -----
+    case "palabras/listar":      (new PalabraController())->listar();      break;
+    case "palabras/crearForm":   (new PalabraController())->crearForm();   break;
+    case "palabras/crear":       (new PalabraController())->crear();       break;
+    case "palabras/editarForm":  (new PalabraController())->editarForm();  break;
+    case "palabras/actualizar":  (new PalabraController())->actualizar();  break;
+    case "palabras/eliminar":    (new PalabraController())->eliminar();    break;
+    case "palabras/aleatoria":   (new PalabraController())->obtenerAleatoria();  break;
 
     default:
         http_response_code(404);
