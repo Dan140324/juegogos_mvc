@@ -4,7 +4,7 @@ Proyecto DAW 6-7. Es la continuación del sitio de juegos del primer parcial
 (Snake y Tres en Raya), ahora convertido en una aplicación web dinámica con
 PHP, MySQL y el patrón **MVC**, con **login** y **CRUD completo**.
 
-## Entidades (una pareja relacionada por integrante)
+## Entidades
 
 | Integrante | Entidades (CRUD) | Relación |
 |---|---|---|
@@ -70,21 +70,4 @@ Los módulos CRUD requieren sesión iniciada.
 
 ## Despliegue
 
-El requisito permite "Render u otra opción". Recomendaciones según dificultad:
-
-- **Hosting gratuito con phpMyAdmin (lo más simple):** InfinityFree o
-  000webhost. Sube los archivos por el administrador de archivos, crea la base
-  de datos, importa `database.sql` desde phpMyAdmin y ajusta `conexion.php`
-  con los datos que te da el panel. No requiere Docker.
-- **Railway:** conecta el repositorio de GitHub, agrega un servicio MySQL con
-  un clic y define las variables `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS`,
-  `DB_PORT` (el `conexion.php` ya las lee automáticamente).
-- **Render:** solo corre PHP mediante Docker y su base administrada es
-  PostgreSQL, así que hay que levantar MySQL aparte. Se incluye un `Dockerfile`
-  por si eligen esta vía, pero las dos opciones anteriores son más sencillas.
-
-## Nota sobre la clave
-
-Igual que en los ejemplos de clase, las claves se guardan en texto plano para
-mantenerlo simple. Como mejora futura se puede usar `password_hash()` al
-registrar y `password_verify()` al validar, cambiando solo esas dos líneas.
+Render
