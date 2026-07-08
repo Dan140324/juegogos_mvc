@@ -1,0 +1,10 @@
+# Config local con credenciales reales (si crean una)
+config/conexion.local.php
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
